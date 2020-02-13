@@ -12,7 +12,7 @@ import Foundation
 
 
 
-class Quake: NSObject, Decodable {
+class Quake: NSObject, Decodable{
     
     // What do I need to parse
     // place
@@ -61,4 +61,12 @@ class Quake: NSObject, Decodable {
     
     
     
+}
+
+class QuakeResults: Decodable {
+    let quakes: [Quake]
+    
+    enum CodingKeys: String, CodingKey {
+        case quakes = "features"
+    }
 }
